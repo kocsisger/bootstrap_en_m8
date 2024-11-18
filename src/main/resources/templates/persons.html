@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage persons</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+</head>
+<body>
+<div class="text-center">
+    <h1>Manage users</h1>
+    <table class="table table-bordered">
+        <thead class="table-dark">
+        <tr>
+
+            <th>Id</th>
+            <th>Firstname</th>
+            <th>Last name</th>
+            <th>e-mail</th>
+            <th>password</th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="person : ${personsList}">
+            <tr>
+                <td th:text="${person.id}"/>
+                <td th:text="${person.firstName}"/>
+                <td th:text="${person.lastName}"/>
+                <td th:text="${person.email}"/>
+                <td th:text="${person.password}"/>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
