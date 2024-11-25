@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
 </head>
 <body>
+<a th:href="@{/persons/new}">Add new person</a>
 <div class="text-center">
     <h1>Manage users</h1>
     <table class="table table-bordered">
@@ -22,7 +23,7 @@
         <tbody>
         <th:block th:each="person : ${personsList}">
             <tr>
-                <td th:text="${person.id}"/>
+                <td th:text="${person.id}">Text added</td>
                 <td th:text="${person.firstName}"/>
                 <td th:text="${person.lastName}"/>
                 <td th:text="${person.email}"/>
